@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Encriptador de texto</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="preload" href="./assets/font/Inter-VariableFont.woff2" as="font" type="font/woff2" crossorigin>
+    <script src="./js/app.js" defer></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/img/favicon-32x32.png">
+</head>
+<body>
+    <div class="container">
+        <header class=" header">
+            <nav class="nav">
+                <a class="nav__link" href="./index.html">
+                    <img class="nav__img" src="./assets/img/logo.webp" alt="Logo de Alura Latam">
+                </a>
+            </nav>
+        </header>
+        <main class="main">
+            <div class="process">
+                <textarea id="textarea" class="process__textarea paragraph" placeholder="Ingrese el texto aqui" title="Ingrese el texto aqui"></textarea>
+                <p class="process__info">
+                    <svg class="icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14m0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16"/><path d="m8.93 6.588-2.29.287-.082.38.45.083c.294.07.352.176.288.469l-.738 3.468c-.194.897.105 1.319.808 1.319.545 0 1.178-.252 1.465-.598l.088-.416c-.2.176-.492.246-.686.246-.275 0-.375-.193-.304-.533zM9 4.5a1 1 0 1 1-2 0 1 1 0 0 1 2 0"/></svg>
+                    Solo letras minúsculas y sin acentos
+                </p>
+                <div class="process__buttons">
+                    <button class="btn btn--fill" onclick="encriptar();">Encriptar</button>
+                    <button class="btn btn--outline" onclick="desencriptar();">Desencriptar</button>
+                </div>
+            </div>
+            <div class="view">
+                <figure class="view__figure">
+                    <img class="view__img" src="./assets/img/imagen.webp" alt="Ilustración de una chica con una lupa buscando en documentos">
+                </figure>
+                <p class="view__title paragraph">Ningún mensaje fue encontrado</p>
+                <p class="view__paragraph paragraph">Ingresa el texto que deseas encriptar o desencriptar.</p>
+                <button class="view__btn btn btn--outline" onclick="copiarTexto();">Copiar</button>
+            </div>
+        </main>
+    </div>
+    <footer class="footer">
+        <p class="footer__paragraph">Desarrollado por <a class="footer__link" href="https://github.com/samuelgomez05" target="_blank">Samuel Gomez</a></p>
+    </footer>
+</body>
+</html>
