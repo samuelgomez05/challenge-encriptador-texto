@@ -13,14 +13,23 @@ function verificarLetraEspecial() {
     return letrasEspeciales.test(textarea.value); // Devolvera un booleano
 }
 
+function verificarCaracterEspecial() {
+    const caracterEspecial = /[^a-zA-Z0-9ñ\sáéíóúÁÉÍÓÚüÜ]/;
+
+    return caracterEspecial.test(textarea.value); // Devolvera un booleano
+}
+
 function logicaPrincipal(opcion) {
     const contieneLetraEspecial = verificarLetraEspecial();
+    const contieneCaracterEspecial = verificarCaracterEspecial();
     let textoEncriptado = textarea.value;
 
     if (textoEncriptado === "") {
         alert("El campo de texto es requerido");
     } else if (contieneLetraEspecial === true) {
         alert("Ingrese solo letras minúsculas y sin acentos");
+    } else if (contieneCaracterEspecial === true) {
+        alert("No se permiten caracteres especiales");
     } else {
         // Recorremos todas las llaves de encriptacion
         for (let i = 0; i < llavesEncriptacion.length; i++) {
