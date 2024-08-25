@@ -43,6 +43,7 @@ function logicaPrincipal(opcion) {
                 textoEncriptado = textoEncriptado.replaceAll(llavesEncriptacion[i][1], llavesEncriptacion[i][0]);
             } else {
                 alert("Ocurrio un problema muy grave, llamando a Alang Turing :D");
+                break;
             }
         }
 
