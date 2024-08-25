@@ -1,5 +1,4 @@
 const textarea = document.querySelector("#textarea");
-const letrasEspeciales = ["á", "é", "í", "ó", "ú", "Á", "É", "Í", "Ó", "Ú", "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "LL", "M", "N", "Ñ", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const llavesEncriptacion = [
     ["e", "enter"],
     ["i", "imes"],
@@ -9,22 +8,13 @@ const llavesEncriptacion = [
 ];
 
 function verificarLetraEspecial() {
-    let contieneLetraEspecial = false;
+    const letrasEspeciales = /[áéíóúÁÉÍÓÚüÜA-Z]/;
 
-    // Recorremos todas las letras especiales
-    for (let i = 0; i < letrasEspeciales.length; i++) {
-        // Si se encuentra solo una, rompemos el ciclo y cambiamos de valor a true
-        if (textarea.value.includes(letrasEspeciales[i])) {
-            contieneLetraEspecial = true;
-            break;
-        }
-    }
-
-    return contieneLetraEspecial;
+    return letrasEspeciales.test(textarea.value); // Devolvera un booleano
 }
 
 function logicaPrincipal(opcion) {
-    let contieneLetraEspecial = verificarLetraEspecial();
+    const contieneLetraEspecial = verificarLetraEspecial();
     let textoEncriptado = textarea.value;
 
     if (textoEncriptado === "") {
